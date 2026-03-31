@@ -17,13 +17,36 @@ namespace Study.OOP.Builder
 
         private void Awake()
         {
-            Sword newSwordA = new SwordBuilder().CreateSword();
-            Sword newSwordB = new SwordBuilder().SetRandomGrade().CreateSword();
-            Sword newSwordC = new SwordBuilder().SetRandomGrade().SetName().CreateSword();
+            #region ¼Òµå
+            //Sword newSwordA 
+            //    = new SwordBuilder()
+            //    .SetRandomAttackValue()
+            //    .CreateSword();
+            //Sword newSwordB 
+            //    = new SwordBuilder()
+            //    .SetRandomGrade()
+            //    .SetRandomAttackValue()
+            //    .CreateSword();
+            //Sword newSwordC = 
+            //    new SwordBuilder()
+            //    .SetRandomGrade()
+            //    .SetRandomAttackValue()
+            //    .SetRandomType()
+            //    .SetRandomOption()
+            //    .SetName()
+            //    .CreateSword();
 
-            Debug.Log(newSwordA.ToString());
-            Debug.Log(newSwordB.ToString());
-            Debug.Log(newSwordC.ToString());
+            //Debug.Log(newSwordA.ToString());
+            //Debug.Log(newSwordB.ToString());
+            //Debug.Log(newSwordC.ToString());
+            #endregion 
+
+            BlackSmith blackSmith = new BlackSmith();
+            for (int i = 0; i < 1000; i++)
+            {
+                Grade randGrade = (Grade)Random.Range(0, 4);
+                var sword = blackSmith.GenerateSword(randGrade);
+            }
         }
     }
 }

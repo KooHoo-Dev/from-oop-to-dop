@@ -174,6 +174,24 @@ namespace Study.OOP.Builder
         {
             return sword;
         }
-        
+
+        public SwordBuilder SetRandomAttackValue()
+        {
+            sword.AttackValue = Random.Range(0, 10000);
+            return this;
+        }
+
+        public SwordBuilder SetRandomType()
+        {
+            sword.Type = (ElementType)Random.Range(0, 4);
+            return this;
+        }
+
+        public SwordBuilder SetRandomOption()
+        {
+            int randomIndex = Random.Range(0, weaponOptions.Length);
+            sword.Options.Add(weaponOptions[randomIndex]);
+            return this;
+        }
     }
 }

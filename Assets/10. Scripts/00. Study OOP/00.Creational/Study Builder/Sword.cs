@@ -14,7 +14,7 @@ namespace Study.OOP.Builder
 
     public enum Grade
     {
-        Normal,
+        Normal = 0,
         Magic,
         Rare,
         Unique
