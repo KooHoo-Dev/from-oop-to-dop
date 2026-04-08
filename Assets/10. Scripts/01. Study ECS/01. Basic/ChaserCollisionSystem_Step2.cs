@@ -52,7 +52,6 @@ namespace ECS_Basic
             JobHandle collisionHandle = colorJob.Schedule(simulation, state.Dependency);
             
             // Interpolation Job을 예약해 줍니다
-
             ColorInterpolationJob interpolationJob = new ColorInterpolationJob()
             {
                 DeltaTime = SystemAPI.Time.DeltaTime
